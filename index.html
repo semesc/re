@@ -12,18 +12,14 @@
       margin: 0;
     }
 
-    .search-container {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .search-container input {
-      padding: 8px 12px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-      width: 80%;
+    input#search-input {
+      width: 100%;
       max-width: 400px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
     }
 
     .gallery-personagens {
@@ -40,7 +36,6 @@
       text-align: center;
       padding: 15px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      position: relative;
     }
 
     .personagem img {
@@ -61,135 +56,154 @@
 
     .fav-btn {
       margin-top: 10px;
-      padding: 5px 10px;
-      font-size: 14px;
-      cursor: pointer;
+      padding: 6px 12px;
       border: none;
-      border-radius: 5px;
-      background-color: #222;
+      border-radius: 6px;
+      background-color: #ff79c6;
       color: #fff;
-      transition: all 0.2s;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .fav-btn:hover {
-      background-color: #ff79c6;
-      color: #111;
+      transform: scale(1.05);
+      background-color: #ffb6f9;
     }
   </style>
 </head>
 <body>
 
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Pesquisar personagem...">
-  </div>
+  <input type="text" id="search-input" placeholder="Pesquisar personagem...">
 
   <div class="gallery-personagens">
-
     <div class="personagem" data-id="enenra">
       <img src="https://i.postimg.cc/0ys0XyQZ/012-1-2.jpg" alt="Enenra">
       <h2>Enenra</h2>
-      <p>Yōkai da fumaça que se infiltra sob disfarce humano. Ameaça séria no arco principal.</p>
+      <p>Yōkai da fumaça que se infiltrava sob disfarce humano. Pode tornar‑se intangível, manipular névoa e atacar de surpresa. Atua como ameaça séria no arco principal do mangá.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="jin-enjoji">
-      <img src="https://i.postimg.cc/4yC59r8L/017-2.jpg" alt="Jin Enjoji">
-      <h2>Jin Enjoji</h2>
-      <p>Amigo de infância da Momo Ayase, envolvido com forças sobrenaturais e maldição do Mau Olhado.</p>
+      <img src="https://i.postimg.cc/4yC59r8L/017-2.jpg" alt="Jin Enjoji">
+      <h2>Jin Enjoji</h2>
+      <p>Jin “Jiji” Enjoji é amigo de infância da Momo Ayase e se vê envolvido com forças sobrenaturais após sua casa ser assombrada. Ele desenvolve poderes espirituais e enfrenta uma maldição ligada ao Mau Olhado.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="momo-ayase">
-      <img src="https://i.postimg.cc/mgbG9nJ7/004.jpg" alt="Momo Ayase">
-      <h2>Momo Ayase</h2>
-      <p>Despertou poderes psíquicos após ser abduzida. Manipula auras e telecinese. Papel central no enredo.</p>
+      <img src="https://i.postimg.cc/mgbG9nJ7/004.jpg" alt="Momo Ayase">
+      <h2>Momo Ayase</h2>
+      <p>Momo Ayase despertou poderes psíquicos após ser abduzida. Ela consegue manipular auras e exercer telecinese, usando braços invisíveis. No enredo, assume papel central entre o sobrenatural e o científico.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="mau-olhado">
       <img src="https://i.postimg.cc/pTkZmy0S/img-or1001221540-0026.jpg" alt="Mau Olhado">
       <h2>Mau Olhado</h2>
-      <p>Espírito vingativo que habita Jiji. Cria casa demoníaca e comanda almas em ataque.</p>
+      <p>Espírito vingativo que habita o corpo de Jiji. Cria uma casa demoníaca para aprisionar vítimas e comanda almas em formas de ataque. Importante antagonista no arco da casa amaldiçoada.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="unji-zuma">
       <img src="https://i.postimg.cc/J0yCFQTW/1740950375-o64uop34y4mbgan1woffwq7fk5fks13mqkmjzy2uxx76z8mp4.jpg" alt="Unji Zuma">
       <h2>Unji Zuma</h2>
-      <p>Ex-líder de gangue, ganha poderes de yokai e usa guarda-chuvas que disparam ondas de choque.</p>
+      <p>Ex-líder de gangue que ganha poderes de yokai após fusão com Umbrella Boy. Usa guarda-chuvas que disparam ondas de choque. Sua jornada o coloca contra o mal de frente, na missão de vencer o jogo amaldiçoado Danmanra.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="count-saint-germain">
-      <img src="https://i.postimg.cc/PqCt9ZSj/1731779198-b6gubtanwhpn33kz185s2vjp5uz8lc65f4ibqyf5m0-2.jpg" alt="Count Saint‑Germain">
-      <h2>Count Saint‑Germain</h2>
-      <p>Nobre com poderes sobrenaturais, procura “Dandadan” e manipula forças de adversários e aliados.</p>
+      <img src="https://i.postimg.cc/PqCt9ZSj/1731779198-b6gubtanwhpn33k185s2vjp5uz8lc65f4ibqyf5m0-2.jpg" alt="Count Saint-Germain">
+      <h2>Count Saint-Germain</h2>
+      <p>Count Saint-Germain é um nobre que coleciona poderes sobrenaturais, trabalhando disfarçado como professor na Kami High. Seu objetivo principal é encontrar o misterioso “Dandadan”.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="reiko-kashima">
-      <img src="https://i.postimg.cc/26DYVv8L/003-2.jpg" alt="Reiko Kashima">
-      <h2>Reiko Kashima</h2>
-      <p>Morreu e renasceu como yokai dos espelhos. Manipula reflexos como portais e pode atacar através de superfícies refletivas.</p>
+      <img src="https://i.postimg.cc/26DYVv8L/003-2.jpg" alt="Reiko Kashima">
+      <h2>Reiko Kashima</h2>
+      <p>Era humana, morreu em bombardeio e renasceu como yokai dos espelhos. Agora manipula reflexos como portais para outra dimensão e pode atacar através de superfícies refletivas.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="rin-sawaki">
       <img src="https://i.postimg.cc/wj4YcZx2/011-2.jpg" alt="Rin Sawaki">
       <h2>Rin Sawaki</h2>
-      <p>Estudante que adquire poderes yokai, manipula gravidade ao cantar e apoia decisivamente no arco principal.</p>
+      <p>Estudante exemplar que adquire poderes yokai: ao cantar, manipula gravidade. No arco principal, assume papel de apoio decisivo.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="aira-shiratori">
       <img src="https://i.postimg.cc/Xvv9G2Q7/019-2.jpg" alt="Aira Shiratori">
       <h2>Aira Shiratori</h2>
-      <p>Estudante bela e autoconfiante, ganha habilidades yokai ligadas à acrobacia e combate, e se junta aos protagonistas.</p>
+      <p>Estudante de ensino médio conhecida por sua beleza e autoconfiança. Ganha habilidades yokai ligadas à acrobacia e ao combate e se junta aos protagonistas.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="vamola">
       <img src="https://i.postimg.cc/Dz9Gm7Dw/016-2.jpg" alt="Vamola">
       <h2>Vamola</h2>
-      <p>Única sobrevivente da raça suméria, pilota armadura poderosa e luta contra alienígenas e espíritos.</p>
+      <p>Única sobrevivente da raça suméria que veio para a Terra. Pilota uma armadura poderosa e luta ao lado dos protagonistas.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
-    <div class="personagem" data-id="koki-yukishiro">
+    <div class="personagem" data-id="kouki-yukishiro">
       <img src="https://i.postimg.cc/66Ydfx4n/FRp1WFq-Omkl-TE1Qy46Wwb4bscegt8Sc-QQNo3.jpg" alt="Kōki Yukishiro">
       <h2>Kōki Yukishiro</h2>
-      <p>Aluna que pode ver e comandar pygmies. Papel decisivo no arco “Kozuka Knives”.</p>
+      <p>Aluna do ensino médio que consegue ver pygmies, seres diminutos que obedecem seus comandos. Desempenha papel decisivo no arco “Kozuka Knives”.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
     <div class="personagem" data-id="ken-takakura">
       <img src="https://i.postimg.cc/L5tLchHj/029.jpg" alt="Ken Takakura">
       <h2>Ken Takakura</h2>
-      <p>Estudante possuído por yōkai, inicia maldição e enfrenta espíritos e alienígenas.</p>
+      <p>Estudante do ensino médio apaixonado por ocultismo e OVNIs. Acaba possuído por um yōkai, marcando o início de uma maldição que precisa quebrar.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
   </div>
 
   <script>
-    // Favoritos
-    window.addEventListener('DOMContentLoaded', () => {
-      const favs = JSON.parse(localStorage.getItem('favs')) || [];
+    // Inicializa favoritos
+    const favs = JSON.parse(localStorage.getItem('favs')) || [];
 
-      document.querySelectorAll('.personagem').forEach(card => {
-        const id = card.getAttribute('data-id');
-        const btn = card.querySelector('.fav-btn');
-        if (!btn) return;
+    document.querySelectorAll('.personagem').forEach(card => {
+      const id = card.getAttribute('data-id');
+      const btn = card.querySelector('.fav-btn');
+      if (!btn) return;
 
-        if (favs.includes(id)) {
+      // Atualiza estado do botão se já estiver favoritado
+      if (favs.includes(id)) {
+        btn.textContent = '❤️ Favoritado';
+      }
+
+      // Clique no botão
+      btn.addEventListener('click', () => {
+        let favsAtual = JSON.parse(localStorage.getItem('favs')) || [];
+        if (favsAtual.includes(id)) {
+          favsAtual = favsAtual.filter(f => f !== id);
+          btn.textContent = '♡ Favoritar';
+        } else {
+          favsAtual.push(id);
           btn.textContent = '❤️ Favoritado';
         }
+        localStorage.setItem('favs', JSON.stringify(favsAtual));
+      });
+    });
 
-        btn.addEventListener('click', () => {
-          let favsAtual = JSON.parse(localStorage.getItem('favs')) || [];
-          if (favsAtual.includes(id)) {
-            favsAtual = favsAtual.filter(f => f !== id);
-            btn.textContent = '♡ Favoritar';
-          } else {
-            favsAtual.push(id);
-            btn.textContent =
+    // Pesquisa
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', () => {
+      const termo = searchInput.value.toLowerCase();
+      document.querySelectorAll('.personagem').forEach(card => {
+        const nome = card.querySelector('h2').textContent.toLowerCase();
+        if (nome.includes(termo)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+    </html>
