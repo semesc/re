@@ -10,6 +10,36 @@
 transform: scale(1.03);
 box-shadow: 0 0 40px rgba(255, 121, 198, 0.6);
 border-color: #ffb6f9;
+  <script>
+window.addEventListener('DOMContentLoaded', () => {
+  const favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+  document.querySelectorAll('.personagem').forEach(card => {
+    const id = card.getAttribute('data-id');
+    if (favs.includes(id)) {
+      card.querySelector('.fav-btn').textContent = '❤️ Favoritado';
+    }
+  });
+
+  document.querySelectorAll('.fav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.personagem');
+      const id = card.getAttribute('data-id');
+      let favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+      if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        btn.textContent = '♡ Favoritar';
+      } else {
+        favs.push(id);
+        btn.textContent = '❤️ Favoritado';
+      }
+
+      localStorage.setItem('favs', JSON.stringify(favs));
+    });
+  });
+});
+</script>
 }
 body {
 background-color: #111;
