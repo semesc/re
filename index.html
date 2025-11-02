@@ -18,6 +18,72 @@ window.addEventListener('DOMContentLoaded', () => {
     const id = card.querySelector('h2').textContent; // usa o nome do personagem como id
     if (favs.includes(id)) {
       card.querySelector('.fav-btn').textContent = '❤️ Favoritado';
+      <!-- Barra de pesquisa -->
+<input type="text" id="pesquisa" placeholder="Pesquisar personagem..." style="margin-bottom:10px; padding:5px; width:200px;">
+
+<!-- Botões de filtro -->
+<button id="ver-todos">Ver Todos</button>
+<button id="ver-favoritos">Ver Favoritos</button>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const pesquisaInput = document.getElementById('pesquisa');
+  const verTodosBtn = document.getElementById('ver-todos');
+  const verFavsBtn = document.getElementById('ver-favoritos');
+
+  // Atualiza os botões de favorito
+  let favs = JSON.parse(localStorage.getItem('favs')) || [];
+  document.querySelectorAll('.personagem').forEach(card => {
+    const id = card.querySelector('h2').textContent;
+    if (favs.includes(id)) {
+      card.querySelector('.fav-btn').textContent = '❤️ Favoritado';
+    }
+  });
+
+  // Clique nos botões de favorito
+  document.querySelectorAll('.fav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.personagem');
+      const id = card.querySelector('h2').textContent;
+      let favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+      if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        btn.textContent = '♡ Favoritar';
+      } else {
+        favs.push(id);
+        btn.textContent = '❤️ Favoritado';
+      }
+      localStorage.setItem('favs', JSON.stringify(favs));
+    });
+  });
+
+  // Barra de pesquisa
+  pesquisaInput.addEventListener('input', () => {
+    const termo = pesquisaInput.value.toLowerCase();
+    document.querySelectorAll('.personagem').forEach(card => {
+      const nome = card.querySelector('h2').textContent.toLowerCase();
+      card.style.display = nome.includes(termo) ? 'block' : 'none';
+    });
+  });
+
+  // Mostrar todos
+  verTodosBtn.addEventListener('click', () => {
+    document.querySelectorAll('.personagem').forEach(card => {
+      card.style.display = 'block';
+    });
+  });
+
+  // Mostrar apenas favoritos
+  verFavsBtn.addEventListener('click', () => {
+    const favs = JSON.parse(localStorage.getItem('favs')) || [];
+    document.querySelectorAll('.personagem').forEach(card => {
+      const id = card.querySelector('h2').textContent;
+      card.style.display = favs.includes(id) ? 'block' : 'none';
+    });
+  });
+});
+</script>
     }
   });
 
