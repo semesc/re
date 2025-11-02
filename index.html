@@ -2,9 +2,8 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <!-- Filtros -->
-<button id="ver-todos">Ver Todos</button>
-<button id="ver-favoritos">Ver Favoritos</button>
+  <!-- Botão único de filtro -->
+<button id="toggle-favs">Ver Favoritos</button>
   <title>Galeria de Personagens</title>
   <style>
     body {
@@ -23,11 +22,25 @@ window.addEventListener('DOMContentLoaded', () => {
       card.querySelector('.fav-btn').textContent = '❤️ Favoritado';
       <!-- Barra de pesquisa -->
 <input type="text" id="pesquisa" placeholder="Pesquisar personagem..." style="margin-bottom:10px; padding:5px; width:200px;">
+// BOTÃO TOGGLE FAVORITOS
+const toggleFavsBtn = document.getElementById('toggle-favs');
+let mostrandoFavoritos = false;
 
-<!-- Botões de filtro -->
-<button id="ver-todos">Ver Todos</button>
-<button id="ver-favoritos">Ver Favoritos</button>
+toggleFavsBtn.addEventListener('click', () => {
+  const favs = JSON.parse(localStorage.getItem('favs')) || [];
+  mostrandoFavoritos = !mostrandoFavoritos;
 
+  document.querySelectorAll('.personagem').forEach(card => {
+    const id = card.getAttribute('data-id');
+    if (mostrandoFavoritos) {
+      card.style.display = favs.includes(id) ? 'block' : 'none';
+      toggleFavsBtn.textContent = 'Ver Todos';
+    } else {
+      card.style.display = 'block';
+      toggleFavsBtn.textContent = 'Ver Favoritos';
+    }
+  });
+});
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const pesquisaInput = document.getElementById('pesquisa');
