@@ -58,63 +58,8 @@
       background-color: #444;
     }
   </style>
+
 </head>
-/* ==== Estilo “fofo adesivo” extra ==== */
-.personagem {
-  position: relative;
-  overflow: hidden;
-  border: 2px dashed #ffb6f9; /* borda adesivo */
-}
-
-.personagem::before {
-  content: "★";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  color: #ff79c6;
-}
-
-.personagem::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  right: -10px;
-  width: 60px;
-  height: 60px;
-  background: url('https://i.postimg.cc/Yq0R5zKD/mini-sticker.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.2;
-  transform: rotate(15deg);
-}
-
-.fav-btn {
-  background-color: #ff79c6;
-  color: #111;
-}
-
-.fav-btn:hover {
-  background-color: #ffb6f9;
-}
-
-#toggle-favs {
-  background-color: #ffb6f9;
-  color: #111;
-}
-
-#toggle-favs:hover {
-  background-color: #ffc4f1;
-}
-
-/* Adicionando sombreamento suave */
-.personagem img {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
-}
-
-.personagem img:hover {
-  transform: scale(1.05);
-}
 <body>
 
   <div class="gallery-personagens">
