@@ -449,6 +449,27 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.personagem');
+
+  cards.forEach(card => {
+    let x = 0, y = 0; // posição inicial
+    let dx = (Math.random() - 0.5) * 2; // velocidade horizontal aleatória
+    let dy = (Math.random() - 0.5) * 2; // velocidade vertical aleatória
+
+    setInterval(() => {
+      x += dx;
+      y += dy;
+      // limite máximo de movimento para não sair do grid
+      if(Math.abs(x) > 15) dx *= -1;
+      if(Math.abs(y) > 15) dy *= -1;
+      // aplica transformação
+      card.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+    }, 50); // atualiza a cada 50ms
+  });
+});
+</script>
 </body>
   </html>
       
