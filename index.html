@@ -477,6 +477,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('animate-like');
+      setTimeout(() => {
+        btn.classList.remove('animate-like');
+      }, 600);  // duração da animação
+    });
+  });
+});
+</script>
+
+<style>
+.fav-btn.animate-like {
+  animation: popHeart 0.6s ease;
+}
+@keyframes popHeart {
+  0% { transform: scale(1); color: #1a1a2e; }
+  30% { transform: scale(1.4); color: #ff79c6; }
+  60% { transform: scale(0.9); color: #ffb3d9; }
+  100% { transform: scale(1); color: #1a1a2e; }
+}
+</style>
 </body>
   </html>
       
