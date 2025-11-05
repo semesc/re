@@ -4,8 +4,91 @@
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
-<style>
+  <style>.comments-container {
+  background-color: #2e2e3e; /* tom escuro para combinar */
+  border: 2px solid #ff79c6; /* borda rosa/rubi */
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 14px;
+  color: #ddd;
+  font-size: 14px;
+  <style>/* estilos básicos para os comentários */
+.comments-container {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #1f1f2f;
+  border-radius: 8px;
+  color: #ddd;
+  font-size: 14px;
+}
+.comment {
+  margin-bottom: 8px;
+  padding: 6px;
+  border-bottom: 1px solid #333;
+}
+.comment-input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2a2a3d;
+  color: #fff;
+}
+.comment-submit {
+  margin-top: 6px;
+  padding: 8px 12px;
+  background-color: #ff79c6;
+  border: none;
+  color: #1a1a2e;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.comment-submit:hover {
+  background-color: #ffb3d9;
+  }
+}
+
+.comment {
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-shadow: 0 4px 10px rgba(255,121,198,0.3);
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.comment-input:focus {
+  border-color: #ff79c6;
+  outline: none;
+}
+
+.comment-submit {
+  margin-top: 8px;
+  padding: 10px 16px;
+  background-color: #ff79c6;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.comment-submit:hover {
+  background-color: #ffb3d9;
+}
     body {
       background-color: #1a1a2e;
       color: #fff;
@@ -296,6 +379,17 @@
       });
     });
 <script>
+    // Pulsar botão de favoritar
+    const favButtons = document.querySelectorAll('.fav-btn');
+    favButtons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transition = 'all 0.3s ease';
+        btn.style.transform = 'scale(1.1)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'scale(1)';
+</script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.personagem');
 
@@ -329,104 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     </script>
-<style>
-.like-button {
-  position: relative;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  outline: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.1s ease;
-}
-
-.like-button:active {
-  transform: scale(0.9);
-}
-
-.heart-icon {
-  width: 32px;
-  height: 32px;
-  fill: none;
-  stroke: #aaa;
-  stroke-width: 2;
-  transition: fill 0.25s ease, stroke 0.25s ease, transform 0.25s ease;
-}
-
-.like-button.liked .heart-icon {
-  fill: #ff2d55;
-  stroke: #ff2d55;
-  transform: scale(1.2);
-}
-
-.like-count {
-  margin-left: 6px;
-  font-size: 16px;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.like-button.liked .like-count {
-  color: #ff2d55;
-}
-
-/* Animação do "+1" */
-.float-heart {
-  position: absolute;
-  top: -10px;
-  font-size: 14px;
-  color: #ff2d55;
-  opacity: 0;
-  animation: floatUp 0.8s ease forwards;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-}
-</style>
-
-<script>
-document.querySelectorAll('.like-button').forEach(button => {
-  const countSpan = button.querySelector('.like-count');
-  let liked = false;
-  let count = 0;
-
-  button.addEventListener('click', () => {
-    liked = !liked;
-    if (liked) {
-      count++;
-      button.classList.add('liked');
-      countSpan.textContent = count;
-
-      // criar o +1 flutuante
-      const floatHeart = document.createElement('span');
-      floatHeart.textContent = '+1';
-      floatHeart.classList.add('float-heart');
-      button.appendChild(floatHeart);
-
-      // remover depois da animação
-      setTimeout(() => floatHeart.remove(), 800);
-    } else {
-      count--;
-      if (count < 0) count = 0;
-      button.classList.remove('liked');
-      countSpan.textContent = count;
-    }
-  });
-});
-</script>
 </body>
   </html>
 
-
-      
+  
