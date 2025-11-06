@@ -2,190 +2,185 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      background-color: #1a1a2e;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      padding: 20px;
-      margin: 0;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ff79c6;
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    /* filtros */
-    .filtros {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .filtros button {
-      background-color: #444;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .filtros button:hover,
-    .filtros button.active {
-      background-color: #ff79c6;
-      color: #1a1a2e;
-    }
-
-    /* cards */
-    .gallery-personagens {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .personagem {
-      background-color: #2e2e3e;
-      border-radius: 20px;
-      width: 250px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 20px rgba(255, 121, 198, 0.3);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .personagem:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255,121,198,0.6);
-    }
-
-    .personagem img, 
-    .personagem video {
-      width: 100%;
-      border-radius: 15px;
-      display: block;
-    }
-
-    .personagem h2 {
-      margin: 10px 0 5px;
-      color: #ff79c6;
-    }
-
-    .personagem p {
-      font-size: 13px;
-      color: #ddd;
-    }
-
-    /* botão de favorito */
-    .fav-btn {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background-color: #ff79c6;
-      color: #1a1a2e;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .fav-btn:hover {
-      background-color: #ffb3d9;
-      transform: scale(1.05);
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#1a1a2e;color:#fff;font-family:'Poppins',sans-serif;padding:20px;background:linear-gradient(135deg,#1a1a2e,#16213e)}
+    h1{text-align:center;color:#ff79c6;margin:0 0 20px;font-size:2.3em;text-shadow:0 0 12px #ff79c630}
+    .filtros{text-align:center;margin-bottom:30px}
+    .filtros button{background:#333;color:#fff;border:2px solid #555;padding:10px 16px;margin:4px;border-radius:12px;cursor:pointer;font-weight:600;transition:.3s}
+    .filtros button:hover,.filtros button.active{background:#ff79c6;color:#000;border-color:#ff79c6;transform:scale(1.05)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;padding:10px}
+    .card{background:#2e2e3e;border-radius:20px;overflow:hidden;box-shadow:0 0 20px #ff79c630;transition:.4s;opacity:0;transform:translateY(30px);position:relative}
+    .card.visible{opacity:1;transform:translateY(0)}
+    .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 0 30px #ff79c660}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .info{padding:14px;text-align:center}
+    .info h2{color:#ff79c6;margin:8px 0 6px;font-size:1.3em}
+    .info p{color:#ccc;font-size:13.5px;line-height:1.4}
+    .tag{position:absolute;top:10px;right:10px;background:#ff79c633;color:#ff79c6;font-size:10px;padding:3px 8px;border-radius:12px;border:1px solid #ff79c6}
   </style>
-</head> 
-
+</head>
 <body>
-  <h1>Galeria de Personagens</h1>
 
-  <!-- Filtros -->
-  <div class="filtros">
-    <button data-filter="all" class="active">Todos</button>
-    <button data-filter="dan-da-dan">Dan da Dan</button>
-    <button data-filter="jujutsu-kaisen">Jujutsu Kaisen</button>
-    <button data-filter="one-piece">One Piece</button>
-    <button data-filter="onepunch">One Punch Man</button>
-    <button data-filter="animes">Animes</button>
+<h1>Galeria de Personagens</h1>
+<p style="text-align:center;color:#ff79c6;margin-bottom:20px">TODOS OS 16 DO SEU HTML ORIGINAL — AGORA COMPLETOS!</p>
+
+<div class="filtros">
+  <button data-filter="all" class="active">Todos</button>
+  <button data-filter="dan-da-dan">Dan da Dan (13)</button>
+  <button data-filter="jujutsu-kaisen">Jujutsu (3)</button>
+  <button data-filter="onepunch">One Punch (1)</button>
+</div>
+
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/c1jx5ZKj/Picsart-25-11-03-00-33-27-851.jpg" alt="Momo">
+    <div class="info"><h2>Momo Ayase</h2><p>Braços invisíveis após sequestro alienígena.</p></div>
   </div>
 
-  <!-- Galeria -->
-  <div class="gallery-personagens">
-    <!-- exemplo de card com vídeo (Dan Da Dan) -->
-    <div class="personagem" data-anime="animes" data-id="dan-da-dan-anime">
-      <video autoplay loop muted playsinline>
-        <source src="https://streamable.com/lfoxm8" type="video/mp4">
-        Seu navegador não suporta vídeos.
-      </video>
-      <h2>Dan Da Dan</h2>
-      <p>Entre aliens e yokais, uma jornada insana com humor, emoção e caos sobrenatural.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <!-- Exemplo: personagem -->
-    <div class="personagem" data-anime="dan-da-dan" data-id="momo-ayase">
-      <img src="https://i.postimg.cc/c1jx5ZKj/Picsart-25-11-03-00-33-27-851.jpg" alt="Momo Ayase">
-      <h2>Momo Ayase</h2>
-      <p>Poderes psíquicos, braços invisíveis. Papel central entre o sobrenatural e o científico.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <!-- (pode deixar o resto dos personagens e animes aqui, igual antes) -->
+  <!-- 2 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/wTyv63Kc/Picsart-25-11-03-00-32-36-858.jpg" alt="Jiji">
+    <div class="info"><h2>Jin Enjoji (Jiji)</h2><p>Possuído pelo Mau Olhado; controla maldições.</p></div>
   </div>
 
-  <script>
-    // favoritos
-    window.addEventListener('DOMContentLoaded', () => {
-      const favs = JSON.parse(localStorage.getItem('favs')) || [];
-      document.querySelectorAll('.personagem').forEach(card => {
-        const id = card.getAttribute('data-id');
-        const btn = card.querySelector('.fav-btn');
-        if (favs.includes(id)) btn.textContent = '❤️ Favoritado';
-      });
+  <!-- 3 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/3NwkjZcR/Picsart-25-11-03-00-36-00-583.jpg" alt="Enenra">
+    <div class="info"><h2>Enenra</h2><p>Yōkai de fumaça que fica intangível.</p></div>
+  </div>
 
-      document.querySelectorAll('.fav-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const card = btn.closest('.personagem');
-          const id = card.getAttribute('data-id');
-          let favs = JSON.parse(localStorage.getItem('favs')) || [];
-          if (favs.includes(id)) {
-            favs = favs.filter(f => f !== id);
-            btn.textContent = '♡ Favoritar';
-          } else {
-            favs.push(id);
-            btn.textContent = '❤️ Favoritado';
-          }
-          localStorage.setItem('favs', JSON.stringify(favs));
-        });
-      });
+  <!-- 4 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/jqGT4X9J/Picsart-25-11-03-00-40-45-978.jpg" alt="Mau Olhado">
+    <div class="info"><h2>Mau Olhado</h2><p>Espírito que mora no Jiji e comanda almas.</p></div>
+  </div>
 
-      // filtros
-      const buttons = document.querySelectorAll('.filtros button');
-      const personagens = document.querySelectorAll('.personagem');
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.getAttribute('data-filter');
-          personagens.forEach(p => {
-            p.style.display =
-              filter === 'all' || p.getAttribute('data-anime') === filter
-                ? 'block'
-                : 'none';
-          });
-        });
-      });
+  <!-- 5 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/4dQcQy4K/Picsart-25-11-03-00-37-03-585.jpg" alt="Reiko">
+    <div class="info"><h2>Reiko Kashima</h2><p>Yōkai dos espelhos; prende em dimensões refletidas.</p></div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/3rZjgSdR/Picsart-25-11-03-00-41-38-577.jpg" alt="Unji">
+    <div class="info"><h2>Unji Zuma</h2><p>Gangue + yōkai Umbrella Boy; joga Danmanra.</p></div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/YCPzvvj8/Picsart-25-11-03-00-35-03-843.jpg" alt="Rin">
+    <div class="info"><h2>Rin Sawaki</h2><p>Canta e muda gravidade.</p></div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/90BB01qr/Picsart-25-11-03-00-39-41-882.jpg" alt="Count">
+    <div class="info"><h2>Count Saint-Germain</h2><p>Coleciona yōkai e aliens para virar deus.</p></div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/YCCdGcR2/Picsart-25-11-03-00-34-16-310.jpg" alt="Vamola">
+    <div class="info"><h2>Vamola</h2><p>Última suméria; pilota armadura Dio Manta.</p></div>
+  </div>
+
+  <!-- 10 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/mDHXLQw7/Picsart-25-11-03-00-38-41-747.jpg" alt="Aira">
+    <div class="info"><h2>Aira Shiratori</h2><p>Cabelo-vivo com Acrobatic Silky.</p></div>
+  </div>
+
+  <!-- 11 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/65NSQ1FN/Picsart-25-11-03-00-28-53-418.jpg" alt="Okarun">
+    <div class="info"><h2>Okarun</h2><p>Supervelocidade roubada pela Turbo-Granny.</p></div>
+  </div>
+
+  <!-- 12 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/SxdH37Tx/Picsart-25-11-03-00-25-39-215.jpg" alt="Koki">
+    <div class="info"><h2>Kōki Yukishiro</h2><p>Comanda exército de pygmies.</p></div>
+  </div>
+
+  <!-- 13 -->
+  <div class="card" data-anime="dan-da-dan">
+    <div class="tag">Dan da Dan</div>
+    <img src="https://i.postimg.cc/Qtw2S86H/Picsart-25-11-03-00-37-52-262.jpg" alt="Fusão">
+    <div class="info"><h2>Jiji & Mau Olhado</h2><p>Fusão que domina almas e maldições.</p></div>
+  </div>
+
+  <!-- 14 JJK -->
+  <div class="card" data-anime="jujutsu-kaisen">
+    <div class="tag">Jujutsu</div>
+    <img src="https://i.postimg.cc/Gmwwwmxm/29-Sem-Titulo-20251102234830.png" alt="Yuji">
+    <div class="info"><h2>Yuji Itadori</h2><p>Engoliu dedo de Sukuna; força bruta.</p></div>
+  </div>
+
+  <!-- 15 JJK -->
+  <div class="card" data-anime="jujutsu-kaisen">
+    <div class="tag">Jujutsu</div>
+    <img src="https://i.postimg.cc/TYL8yD30/Picsart-25-11-03-00-31-33-155.jpg" alt="Higuruma">
+    <div class="info"><h2>Hiromi Higuruma</h2><p>Tribunal amaldiçoado com martelo vivo.</p></div>
+  </div>
+
+  <!-- 16 JJK + OPM -->
+  <div class="card" data-anime="jujutsu-kaisen">
+    <div class="tag">Jujutsu</div>
+    <img src="https://i.postimg.cc/s2HCXJ99/Picsart-25-11-03-16-40-22-175.jpg" alt="Choso">
+    <div class="info"><h2>Choso</h2><p>Sangue-arma; irmão mais velho de Yuji.</p></div>
+  </div>
+
+  <!-- 17 OPM (bônus) -->
+  <div class="card" data-anime="onepunch">
+    <div class="tag">One Punch</div>
+    <img src="https://i.postimg.cc/JhWWCzmr/Picsart-25-11-03-00-23-50-498.jpg" alt="Garou">
+    <div class="info"><h2>Garou</h2><p>Copia golpes e vira monstro em tempo real.</p></div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    const btns = document.querySelectorAll('.filtros button');
+
+    cards.forEach((c,i)=>setTimeout(()=>c.classList.add('visible'),i*80));
+
+    btns.forEach(b=>b.onclick=()=>{
+      btns.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.filter;
+      cards.forEach(c=>c.style.display = (f==='all'||c.dataset.anime===f)?'block':'none');
     });
-  </script>
+
+    cards.forEach(c=>{
+      let x=0,y=0,dx=(Math.random()-0.5)*1.3,dy=(Math.random()-0.5)*1.3;
+      const move=()=>{x+=dx;y+=dy;if(Math.abs(x)>9)dx=-dx;if(Math.abs(y)>9)dy=-dy;
+        c.style.transform=`translate(${x}px,${y}px) scale(1.02)`;
+        requestAnimationFrame(move);
+      };
+      requestAnimationFrame(move);
+    });
+  });
+</script>
 </body>
 </html>
