@@ -4,91 +4,8 @@
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>.comments-container {
-  background-color: #2e2e3e; /* tom escuro para combinar */
-  border: 2px solid #ff79c6; /* borda rosa/rubi */
-  border-radius: 12px;
-  padding: 12px;
-  margin-top: 14px;
-  color: #ddd;
-  font-size: 14px;
-  <style>/* estilos básicos para os comentários */
-.comments-container {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #1f1f2f;
-  border-radius: 8px;
-  color: #ddd;
-  font-size: 14px;
-}
-.comment {
-  margin-bottom: 8px;
-  padding: 6px;
-  border-bottom: 1px solid #333;
-}
-.comment-input {
-  width: 100%;
-  padding: 6px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #2a2a3d;
-  color: #fff;
-}
-.comment-submit {
-  margin-top: 6px;
-  padding: 8px 12px;
-  background-color: #ff79c6;
-  border: none;
-  color: #1a1a2e;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.comment-submit:hover {
-  background-color: #ffb3d9;
-  }
-}
 
-.comment {
-  background-color: #1a1a2e;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  padding: 8px;
-  box-shadow: 0 4px 10px rgba(255,121,198,0.3);
-}
-
-.comment-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 2px solid #444;
-  border-radius: 8px;
-  background-color: #1a1a2e;
-  color: #fff;
-  font-size: 14px;
-  transition: border-color 0.3s;
-}
-
-.comment-input:focus {
-  border-color: #ff79c6;
-  outline: none;
-}
-
-.comment-submit {
-  margin-top: 8px;
-  padding: 10px 16px;
-  background-color: #ff79c6;
-  color: #1a1a2e;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.comment-submit:hover {
-  background-color: #ffb3d9;
-}
+  <style>
     body {
       background-color: #1a1a2e;
       color: #fff;
@@ -96,16 +13,20 @@
       padding: 20px;
       margin: 0;
     }
+
     h1 {
       text-align: center;
       color: #ff79c6;
       margin-bottom: 20px;
       font-size: 2em;
     }
+
+    /* filtros */
     .filtros {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .filtros button {
       background-color: #444;
       color: #fff;
@@ -117,17 +38,21 @@
       font-weight: 600;
       transition: 0.2s;
     }
+
     .filtros button:hover,
     .filtros button.active {
       background-color: #ff79c6;
       color: #1a1a2e;
     }
+
+    /* cards */
     .gallery-personagens {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       justify-items: center;
     }
+
     .personagem {
       background-color: #2e2e3e;
       border-radius: 20px;
@@ -136,24 +61,32 @@
       padding: 15px;
       box-shadow: 0 0 20px rgba(255, 121, 198, 0.3);
       position: relative;
-      transition: transform 0.2s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .personagem:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,121,198,0.6);
     }
-    .personagem img {
+
+    .personagem img, 
+    .personagem video {
       width: 100%;
       border-radius: 15px;
       display: block;
     }
+
     .personagem h2 {
       margin: 10px 0 5px;
       color: #ff79c6;
     }
+
     .personagem p {
       font-size: 13px;
       color: #ddd;
     }
+
+    /* botão de favorito */
     .fav-btn {
       margin-top: 10px;
       padding: 8px 12px;
@@ -165,11 +98,14 @@
       font-weight: 600;
       transition: 0.2s;
     }
+
     .fav-btn:hover {
       background-color: #ffb3d9;
+      transform: scale(1.05);
     }
   </style>
 </head> 
+
 <body>
   <h1>Galeria de Personagens</h1>
 
@@ -180,12 +116,23 @@
     <button data-filter="jujutsu-kaisen">Jujutsu Kaisen</button>
     <button data-filter="one-piece">One Piece</button>
     <button data-filter="onepunch">One Punch Man</button>
-    <button data-filter="animes">animes</button>
+    <button data-filter="animes">Animes</button>
   </div>
 
   <!-- Galeria -->
   <div class="gallery-personagens">
-    <!-- Dan da Dan -->
+    <!-- exemplo de card com vídeo (Dan Da Dan) -->
+    <div class="personagem" data-anime="animes" data-id="dan-da-dan-anime">
+      <video autoplay loop muted playsinline>
+        <source src="https://streamable.com/lfoxm8" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <h2>Dan Da Dan</h2>
+      <p>Entre aliens e yokais, uma jornada insana com humor, emoção e caos sobrenatural.</p>
+      <button class="fav-btn">♡ Favoritar</button>
+    </div>
+
+    <!-- Exemplo: personagem -->
     <div class="personagem" data-anime="dan-da-dan" data-id="momo-ayase">
       <img src="https://i.postimg.cc/c1jx5ZKj/Picsart-25-11-03-00-33-27-851.jpg" alt="Momo Ayase">
       <h2>Momo Ayase</h2>
@@ -193,137 +140,7 @@
       <button class="fav-btn">♡ Favoritar</button>
     </div>
 
-    <div class="personagem" data-anime="dan-da-dan" data-id="jin-enjoji">
-      <img src="https://i.postimg.cc/wTyv63Kc/Picsart-25-11-03-00-32-36-858.jpg" alt="Jin Enjoji">
-      <h2>Jin Enjoji</h2>
-      <p>Amigo de infância da Momo, possuído pelo espírito Mau Olhado, que o liga ao mundo sobrenatural.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="enenra">
-      <img src="https://i.postimg.cc/3NwkjZcR/Picsart-25-11-03-00-36-00-583.jpg" alt="Enenra">
-      <h2>Enenra</h2>
-      <p>Yōkai da fumaça que pode tornar-se intangível e atacar pelo invisível.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="mau-olhado">
-      <img src="https://i.postimg.cc/jqGT4X9J/Picsart-25-11-03-00-40-45-978.jpg" alt="Mau Olhado">
-      <h2>Mau Olhado</h2>
-      <p>Espírito vingativo que habita o corpo de Jiji e comanda maldições e almas dentro de sua casa demoníaca.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="reiko-kashima">
-      <img src="https://i.postimg.cc/4dQcQy4K/Picsart-25-11-03-00-37-03-585.jpg" alt="Reiko Kashima">
-      <h2>Reiko Kashima</h2>
-      <p>Yōkai dos espelhos que pode prender inimigos em dimensões refletidas e atacar através de superfícies de vidro.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="unji-zuma">
-      <img src="https://i.postimg.cc/3rZjgSdR/Picsart-25-11-03-00-41-38-577.jpg" alt="Unji Zuma">
-      <h2>Unji Zuma</h2>
-      <p>Líder de gangue que adquire poderes do yokai Umbrella Boy e entra em missão para vencer o jogo amaldiçoado Danmanra.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="rin-sawaki">
-      <img src="https://i.postimg.cc/YCPzvvj8/Picsart-25-11-03-00-35-03-843.jpg" alt="Rin Sawaki">
-      <h2>Rin Sawaki</h2>
-      <p>Manipula gravidade ao cantar. Estudante exemplar que se envolve nos casos sobrenaturais.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="count-saint-germain">
-      <img src="https://i.postimg.cc/90BB01qr/Picsart-25-11-03-00-39-41-882.jpg" alt="Count Saint-Germain">
-      <h2>Count Saint-Germain</h2>
-      <p>Nobre colecionador do paranormal. Busca reunir poderes de yōkai, alienígenas e artefatos para alcançar o supremo.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="vamola">
-      <img src="https://i.postimg.cc/YCCdGcR2/Picsart-25-11-03-00-34-16-310.jpg" alt="Vamola">
-      <h2>Vamola</h2>
-      <p>Última sobrevivente da raça suméria. Pilota uma armadura poderosa e luta ao lado dos protagonistas.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="aira-shiratori">
-      <img src="https://i.postimg.cc/mDHXLQw7/Picsart-25-11-03-00-38-41-747.jpg" alt="Aira Shiratori">
-      <h2>Aira Shiratori</h2>
-      <p>Estudante com habilidades yokai ligadas à acrobacia e combate. Inicialmente rival, une-se aos protagonistas.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="okarun">
-      <img src="https://i.postimg.cc/65NSQ1FN/Picsart-25-11-03-00-28-53-418.jpg" alt="Okarun">
-      <h2>Okarun</h2>
-      <p>Possui habilidades de combate e apoio, mostrando coragem em batalhas sobrenaturais.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="koki-yukishiro">
-      <img src="https://i.postimg.cc/SxdH37Tx/Picsart-25-11-03-00-25-39-215.jpg" alt="Kōki Yukishiro">
-      <h2>Kōki Yukishiro</h2>
-      <p>Aluna que comanda pequenos seres chamados pygmies, usando-os estrategicamente contra adversários.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="dan-da-dan" data-id="jiji-mau-olhado">
-      <img src="https://i.postimg.cc/Qtw2S86H/Picsart-25-11-03-00-37-52-262.jpg" alt="Jiji + Mau Olhado Fusão">
-      <h2>Jiji & Mau Olhado</h2>
-      <p>Fusão poderosa que combina Jiji e o Mau Olhado, dominando maldições e manipulando almas.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <!-- Jujutsu Kaisen -->
-    <div class="personagem" data-anime="jujutsu-kaisen" data-id="itadori-yuuji">
-      <img src="https://i.postimg.cc/Gmwwwmxm/29-Sem-Titulo-20251102234830.png" alt="Itadori Yuuji">
-      <h2>Itadori Yuuji</h2>
-      <p>Estudante que ingere Sukuna e luta contra maldições. Corajoso e leal aos amigos.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="jujutsu-kaisen" data-id="hiromi-higuruma">
-      <img src="https://i.postimg.cc/TYL8yD30/Picsart-25-11-03-00-31-33-155.jpg" alt="Hiromi Higuruma">
-      <h2>Hiromi Higuruma</h2>
-      <p>Possui técnica amaldiçoada que cria uma “corte” sobrenatural, julgando adversários com martelo mutável.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-anime="jujutsu-kaisen" data-id="choso">
-  <img src="https://i.postimg.cc/s2HCXJ99/Picsart-25-11-03-16-40-22-175.jpg" alt="Choso">
-  <h2>Choso</h2>
-  <p>Maldição da série que domina a manipulação de sangue; um membro dos Death Painting Wombs com vínculo intenso aos irmãos.</p>
-  <button class="fav-btn">♡ Favoritar</button>
-    </div>
-    
-  <div class="personagem" data-anime="onepunch" data-id="garou">
-  <img src="https://i.postimg.cc/JhWWCzmr/Picsart-25-11-03-00-23-50-498.jpg" alt="Garou">
-  <h2>Garou</h2>
-  <p>O Caçador de Heróis. Especialista em artes marciais, força e agilidade incríveis, sempre desafiando heróis e buscando evoluir como lutador.</p>
-  <button class="fav-btn">♡ Favoritar</button>
-
-  <div class="personagem" data-anime="one-piece" data-id="roronoa-zoro">
-      <img src="https://i.postimg.cc/3rZjgSdR/Picsart-25-11-03-00-41-38-577.jpg" alt="Roronoa Zoro">
-      <h2>Roronoa Zoro</h2>
-      <p><!-- Card: One Piece - Roronoa Zoro -->
-<div class="card" data-category="one-piece">
-  <img src="https://i.postimg.cc/RVZN8hNL/Picsart-25-11-05-19-54-08-438.jpg" class="card-video" alt="Roronoa Zoro">
-  <div class="card-info">
-    <h2>Roronoa Zoro</h2>
-    <p>O caçador de piratas e espadachim dos Chapéus de Palha.
-Treina sem descanso em busca de ser o melhor do mundo.
-Sua força é tão cortante quanto sua lealdade.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-
-
-</div>
-  </div>
-</div>
+    <!-- (pode deixar o resto dos personagens e animes aqui, igual antes) -->
   </div>
 
   <script>
@@ -370,81 +187,5 @@ Sua força é tão cortante quanto sua lealdade.</p>
       });
     });
   </script>
-    <script>
-  <script>
-  <!-- seu script de favoritos e filtros vem aqui -->
-
-    <script>
-
 </body>
 </html>
-<script>
-  // Animação de entrada dos cards
-  window.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.personagem');
-    cards.forEach((card, index) => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(30px)';
-      setTimeout(() => {
-        card.style.transition = 'all 0.6s ease-out';
-        card.style.opacity = 1;
-        card.style.transform = 'translateY(0)';
-      }, index * 100); // efeito cascata
-    });
-
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.personagem');
-
-      });
-    });
-<script>
-    // Pulsar botão de favoritar
-    const favButtons = document.querySelectorAll('.fav-btn');
-    favButtons.forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        btn.style.transition = 'all 0.3s ease';
-        btn.style.transform = 'scale(1.1)';
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'scale(1)';
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.personagem');
-
-  cards.forEach(card => {
-    let x = 0, y = 0; // posição inicial
-    let dx = (Math.random() - 0.5) * 2; // velocidade horizontal aleatória
-    let dy = (Math.random() - 0.5) * 2; // velocidade vertical aleatória
-
-    setInterval(() => {
-      x += dx;
-      y += dy;
-      // limite máximo de movimento para não sair do grid
-      if(Math.abs(x) > 15) dx *= -1;
-      if(Math.abs(y) > 15) dy *= -1;
-      // aplica transformação
-      card.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
-    }, 50); // atualiza a cada 50ms
-  });
-});
-</script>
-    <script>
-  // Hover animado nos cards
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.06)';
-        card.style.boxShadow = '0 0 25px rgba(255,121,198,0.6)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-        card.style.boxShadow = '0 0 20px rgba(255,121,198,0.3)';
-      });
-    });
-    </script>
-</body>
-  </html>
-
-  
