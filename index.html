@@ -2,75 +2,117 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* Tema geral mangá: preto / branco / cinza */
     body {
-      background-color: #1a1a2e;
-      color: #fff;
+      background-color: #0a0a0c;
+      color: #e0e0e0;
       font-family: 'Poppins', sans-serif;
       padding: 20px;
       margin: 0;
     }
+
     h1 {
       text-align: center;
-      color: #ff79c6;
+      color: #ffffff;
       margin-bottom: 20px;
       font-size: 2em;
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
     }
+
     .filtros {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .filtros button {
-      background-color: #444;
-      color: #fff;
-      border: none;
+      background-color: #111;
+      color: #f0f0f0;
+      border: 1px solid #333;
       padding: 10px 15px;
       margin: 5px;
-      border-radius: 12px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
       transition: 0.2s;
     }
+
     .filtros button:hover,
     .filtros button.active {
-      background-color: #ff79c6;
-      color: #1a1a2e;
+      background-color: #1e1e1e;
+      border-color: #555;
+      color: #ffffff;
     }
+
     .gallery-personagens {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
       justify-items: center;
     }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
     .personagem {
-      background-color: #2e2e3e;
-      border-radius: 20px;
-      width: 250px;
+      position: relative;
+      background-color: #0f0f10;
+      border: 2px solid #3a3a3a;
+      border-radius: 12px;
+      width: 260px;
       text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 20px rgba(255, 121, 198, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 16px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.6);
+      animation: floatCard 4s ease-in-out infinite;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      overflow: hidden;
     }
-    .personagem:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255,121,198,0.6);
+
+    .personagem::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/little-pluses.png");
+      opacity: 0.06;
+      pointer-events: none;
     }
+
     .personagem img {
       width: 100%;
-      border-radius: 15px;
-      display: block;
+      border-radius: 10px;
+      border: 1px solid #333;
+      box-shadow: 0 0 8px rgba(0,0,0,0.7);
     }
+
     .personagem h2 {
-      margin: 10px 0 5px;
-      color: #ff79c6;
+      margin: 12px 0 6px;
+      color: #f8f8f8;
+      font-size: 18px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
     }
+
     .personagem p {
-      font-size: 13px;
-      color: #ddd;
+      color: #cfcfcf;
+      font-size: 14px;
+      line-height: 1.4;
     }
+
+    .personagem:hover {
+      transform: scale(1.07);
+      border-color: #666;
+      box-shadow: 0 0 35px rgba(0,0,0,0.8);
+    }
+
   </style>
+</head>
+<body>
 </head>
 <body>
   <h1>Galeria de Personagens</h1>
@@ -225,22 +267,18 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.personagem');
-
   cards.forEach(card => {
     let x = 0, y = 0;
-    let dx = 2;  // velocidade horizontal fixa e rápida
-    let dy = 2;  // velocidade vertical fixa e rápida
+    let dx = (Math.random() - 0.5) * 2; // velocidade horizontal aleatória
+    let dy = (Math.random() - 0.5) * 2; // velocidade vertical aleatória
 
     setInterval(() => {
       x += dx;
       y += dy;
-
-      // Quando atingir o limite do movimento, inverter direção
       if (Math.abs(x) > 15) dx *= -1;
       if (Math.abs(y) > 15) dy *= -1;
-
       card.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
-    }, 20); // intervalo menor deixa tudo mais rápido
+    }, 50);
   });
 });
 </script>
