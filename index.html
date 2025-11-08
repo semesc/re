@@ -44,14 +44,17 @@
       gap: 20px;
       justify-items: center;
     }
-    .personagem {
-      background-color: #2e2e3e;
-      border-radius: 20px;
-      width: 250px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 20px rgba(255, 121, 198, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+    
+.personagem {
+  background-color: #212121; /* ou #0b0b0f ou #282828 — escolha o que curtir mais */
+  border-radius: 20px;
+  width: 260px;
+  text-align: center;
+  padding: 18px;
+  box-shadow: 0 0 25px rgba(255, 110, 199, 0.25);
+  animation: floatCard 4s ease-in-out infinite;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
     }
     .personagem:hover {
       transform: scale(1.05);
