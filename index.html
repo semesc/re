@@ -224,16 +224,16 @@
       });
     });
   </script>
-<script>
+  <script>
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.personagem');
 
   cards.forEach(card => {
-    let offsetX = (Math.random() - 0.5) * 40;  // amplitude maior
-    let offsetY = (Math.random() - 0.5) * 40;  
-    let dx = (Math.random() - 0.5) * 2;        // velocidade maior
-    let dy = (Math.random() - 0.5) * 2;
-    const maxOffset = 35;                      // limite de movimento
+    let offsetX = (Math.random() - 0.5) * 25;  // amplitude boa
+    let offsetY = (Math.random() - 0.5) * 25;  
+    let dx = (Math.random() - 0.5) * 0.7;      // velocidade reduzida
+    let dy = (Math.random() - 0.5) * 0.7;
+    const maxOffset = 20;                      // limite confortável
 
     function animate() {
       offsetX += dx;
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(offsetX) > maxOffset) dx *= -1;
       if (Math.abs(offsetY) > maxOffset) dy *= -1;
 
-      card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.03)`;
+      card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.02)`;
 
       requestAnimationFrame(animate);
     }
@@ -250,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   });
 });
-</script>
-</script>
+  </script>
 </body>
 </html>
