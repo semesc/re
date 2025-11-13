@@ -4,15 +4,7 @@
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>#backgroundCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: #0a0a0a;
-}
+  <style>
 .anime-carousel {
   margin-top: 70px;
   text-align: center;
@@ -276,7 +268,7 @@
 </div>
 
 </div>
-      
+
 
 <!-- Carrossel de Animes -->
 <section class="anime-carousel">
@@ -409,51 +401,6 @@
       });
     });
   </script>
-<canvas id="backgroundCanvas"></canvas>
 
-<script>
-  const canvas = document.getElementById('backgroundCanvas');
-  const ctx = canvas.getContext('2d');
-
-  let width, height;
-  const particles = [];
-
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-
-  for (let i = 0; i < 60; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * 2 + 1,
-      speedX: (Math.random() - 0.5) * 0.7,
-      speedY: (Math.random() - 0.5) * 0.7,
-      opacity: Math.random() * 0.5 + 0.3
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-    for (const p of particles) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-      ctx.fill();
-      p.x += p.speedX;
-      p.y += p.speedY;
-
-      if (p.x < 0 || p.x > width) p.speedX *= -1;
-      if (p.y < 0 || p.y > height) p.speedY *= -1;
-    }
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
 </body>
 </html>
