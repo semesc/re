@@ -4,37 +4,7 @@
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>.reaction-card {
-  position: relative;
-  width: 250px;
-  margin: 20px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.reaction-img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.reaction-buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.reaction {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-  color: white;
-}
-
-.reaction:hover {
-  transform: scale(1.2);
-}
+  <style>
 .anime-carousel {
   margin-top: 70px;
   text-align: center;
@@ -293,24 +263,6 @@
 <div class="personagem" data-anime="onepunch">
   <img src="https://i.postimg.cc/2yY6wVvN/68-Sem-Titulo-20251113163136.png" alt="Saitama">
   <h2>Saitama</h2>
-<div class="reaction-card">
-  <img src="https://i.postimg.cc/c1MXhfWr/67-Sem-Titulo-20251113151533.png" alt="Saitama" class="reaction-img">
-  <div class="reaction-buttons">
-    <button class="reaction" onclick="addReaction(this)">🔥 <span>0</span></button>
-    <button class="reaction" onclick="addReaction(this)">💀 <span>0</span></button>
-    <button class="reaction" onclick="addReaction(this)">💪 <span>0</span></button>
-  </div>
-</div>
-
-<script>
-  function addReaction(btn) {
-    let countSpan = btn.querySelector("span");
-    let count = parseInt(countSpan.innerText);
-    countSpan.innerText = count + 1;
-    btn.style.transform = "scale(1.2)";
-    setTimeout(() => btn.style.transform = "scale(1)", 150);
-  }
-</script>
 </div>
 
 </div>
