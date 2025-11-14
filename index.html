@@ -4,7 +4,37 @@
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
+  <style>.anime-gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.anime-card {
+  min-width: 320px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  pointer-events: none;
+}
 .anime-carousel {
   margin-top: 70px;
   text-align: center;
